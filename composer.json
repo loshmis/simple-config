@@ -1,0 +1,26 @@
+{
+    "name": "loshmis/slim-config",
+    "description": "Slim configuration loader",
+    "authors": [
+      {
+        "name": "Milos Stojanovic",
+        "email": "stojanovic.loshmi@gmail.com"
+      }
+    ],
+    "require": {
+        "illuminate/config": "5.*",
+        "symfony/finder": "~2.6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.5"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Loshmis\\SlimConfig\\": "src/"
+        },
+        "classmap": [
+            "tests"
+        ]
+    }
+}
