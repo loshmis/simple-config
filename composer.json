@@ -1,6 +1,6 @@
 {
-    "name": "loshmis/slim-config",
-    "description": "Slim configuration loader",
+    "name": "loshmis/simple-config",
+    "description": "Simple configuration loader",
     "authors": [
       {
         "name": "Milos Stojanovic",
@@ -17,7 +17,7 @@
 
     "autoload": {
         "psr-4": {
-            "Loshmis\\SlimConfig\\": "src/"
+            "Loshmis\\SimpleConfig\\": "src/"
         },
         "classmap": [
             "tests"

@@ -1,6 +1,6 @@
 <?php
 
-namespace Loshmis\SlimConfig;
+namespace Loshmis\SimpleConfig;
 
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;

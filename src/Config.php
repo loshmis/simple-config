@@ -1,43 +1,25 @@
 <?php
 
-namespace Loshmis\SlimConfig;
+namespace Loshmis\SimpleConfig;
 
 use Illuminate\Config\Repository;
-use Symfony\Component\Finder\Finder;
 
-class Config {
+class Config extends Repository {
 
     /**
-     * Load the configuration.
+     * Initialize the config repository and load files.
      *
-     * @param $configPath
-     * @return Repository
+     * @param Loader $loader
      */
-    public function load($configPath)
+    public function __construct(Loader $loader)
     {
-        $loader = new Loader($configPath, new Finder);
+        parent::__construct();
 
         $files = $loader->getFiles();
 
-        return $this->buildRepository($files);
-    }
-
-    /**
-     * Build configuration repository.
-     *
-     * @param $files
-     * @return Repository
-     */
-    private function buildRepository($files)
-    {
-        $config = new Repository;
-
         foreach ( $files as $key => $path ) {
-            $config->set($key, require $path);
+            $this->set($key, require $path);
         }
-
-        return $config;
     }
-
 
 }

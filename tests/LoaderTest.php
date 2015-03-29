@@ -1,16 +1,13 @@
 <?php
 
-use Symfony\Component\Finder\Finder;
-
-class LoaderTest extends PHPUnit_Framework_TestCase {
-
-
+class LoaderTest extends TestCase
+{
     /** @test */
     public function it_check_if_all_files_are_loaded()
     {
         $files = $this->getLoader()->getFiles();
 
-        $this->assertCount(3, $files);
+        $this->assertCount(2, $files);
     }
 
     /** @test */
@@ -19,29 +16,17 @@ class LoaderTest extends PHPUnit_Framework_TestCase {
         $files = $this->getLoader()->getFiles();
 
         $this->assertArrayHasKey('app', $files);
-        $this->assertArrayHasKey('database', $files);
-        $this->assertArrayHasKey('subdir.test', $files);
+        $this->assertArrayHasKey('subdir.database', $files);
     }
 
     /** @test */
     public function it_check_if_array_has_correct_format()
     {
         $files = $this->getLoader()->getFiles();
-        $path  = $this->getStubsPath();
+        $path  = $this->getExampleConfigDirectoryPath();
 
         $this->assertEquals($path . "/app.php", $files['app']);
-        $this->assertEquals($path . "/database.php", $files['database']);
-        $this->assertEquals($path . "/subdir/test.php", $files['subdir.test']);
-    }
-
-    private function getStubsPath()
-    {
-        return __DIR__ . '/stubs';
-    }
-
-    private function getLoader()
-    {
-        return new \Loshmis\SlimConfig\Loader($this->getStubsPath(), new Finder);
+        $this->assertEquals($path . "/subdir/database.php", $files['subdir.database']);
     }
 
 }
