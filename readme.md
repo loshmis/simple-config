@@ -128,7 +128,7 @@ $appName = $config->get('app.name');
 //set data
 $config->set('app.name', 'Simple Config')
 
-...
+//...
 ```
 
 ## License
