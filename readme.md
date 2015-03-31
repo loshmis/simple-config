@@ -100,6 +100,9 @@ $appName = config('app.name');
 config(['app.name' => 'Simple Config'])
 ```
 
+## License
+
+Simple Config is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
 
 
 
