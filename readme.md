@@ -90,7 +90,7 @@ function config($key = null, $default = null)
 }
 ```
 
-Using the defined helper function, you can access to configuration data ***anywhere inside your application** by simply calling
+Using the defined helper function, you can access to configuration data **anywhere inside your application** by simply calling
 
 ```php
 // to get some configuration data
