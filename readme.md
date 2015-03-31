@@ -64,7 +64,14 @@ return [
 Now, if you want to get the value for name from that configuration file, you can do it like this
 
 ```php
+//get data
 $appName = $app->config->get('app.name');
+
+//set data
+$app->config->set('app.name', 'Simple Config')
+
+// to check if configuration parameter is set
+$app->config->has('app.name') //will return true in this case
 ```
 
 You can find all available methods by visiting [Laravel API Documentation](http://laravel.com/api/5.0/Illuminate/Config/Repository.html).
@@ -98,6 +105,12 @@ $appName = config('app.name');
 
 // to set some data
 config(['app.name' => 'Simple Config'])
+```
+
+## Usage without Slim PHP Framework
+```php
+
+
 ```
 
 ## License
