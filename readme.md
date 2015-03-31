@@ -6,8 +6,6 @@ Simple Config provides a convinient and classy way to load multiple configuratio
 inspired by Laravel 5 configuration loading (it actually use illuminate/config package for providing access to config
 data). It is mainly created to be used with Slim Framework, but it can be used with any PHP application.
 
-----
-
 ## Installation
 
 You can install it via composer by typing the following
@@ -23,8 +21,6 @@ or you can include it to your composer.json file
     "loshmis/simple-config": "~1.0"
 }
 ```
-
-----
 
 ## Usage with Slim
 
@@ -59,6 +55,7 @@ Let's assume that you have file called app.php inside your config directory and 
 
 ```php
 <?php
+
 return [
     'name' => 'Test'
 ];
@@ -79,7 +76,6 @@ If you want, you can create an helper function so you can easily manipulate with
 You can define the function like this (function is taken from Laravel's source code and slightly modified to be used with Slim framework):
 
 ```php
-
 function config($key = null, $default = null)
 {
     $app = \Slim\Slim::getInstance();
@@ -92,19 +88,16 @@ function config($key = null, $default = null)
 
     return $app->config->get($key, $default);
 }
-
 ```
 
 Using the defined helper function, you can access to configuration data ***anywhere inside your application** by simply calling
 
 ```php
-
 // to get some configuration data
 $appName = config('app.name');
 
 // to set some data
 config(['app.name' => 'Simple Config'])
-
 ```
 
 
