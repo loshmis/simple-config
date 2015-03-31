@@ -2,9 +2,9 @@
 
 [![Build Status](https://travis-ci.org/loshmis/simple-config.svg?branch=master)](https://travis-ci.org/loshmis/simple-config)
 
-Simple Config provides a convinient and classy way to load multiple configuration files from config directory and it is
-inspired by Laravel 5 configuration loading (it actually use illuminate/config package for providing access to config
-data). It is mainly created to be used with Slim Framework, but it can be used with any PHP application.
+Simple Config provides a convenient and classy way to load multiple configuration files from your configuration directory and it is
+inspired by [Laravel 5](http://laravel.com) configuration loading (it actually use [illuminate/config](https://github.com/illuminate/config) package for providing access to config
+data). It is mainly created to provide simple and powerful configuration loading for [Slim Framework](http://www.slimframework.com/), but it can be used with any PHP application.
 
 ## Installation
 
@@ -49,9 +49,9 @@ $app->container->singleton('config', function($c) {
 });
 ```
 
-And you can then manipulate with your configuration the same way yo do in Laravel 5 (and 4) application.
+And you can then manipulate with your configuration the same way you do in Laravel 5 (and 4) application.
 
-Let's assume that you have file called app.php inside your config directory and inside that file you have the following PHP code:
+Let's assume that you have file called **app.php** inside your config directory and inside that file you have the following PHP code:
 
 ```php
 <?php
@@ -61,7 +61,7 @@ return [
 ];
 ```
 
-Now, if you want to get the value for name from that configuration file, you can do it like this
+Now, if you want to get the value for **name** from that configuration file, you can do it like this
 
 ```php
 //get data
@@ -75,6 +75,8 @@ $app->config->has('app.name') //will return true in this case
 ```
 
 You can find all available methods by visiting [Laravel API Documentation](http://laravel.com/api/5.0/Illuminate/Config/Repository.html).
+
+If you are interested in using illuminate/config package from Laravel 4, there are some [great blog posts](http://thoughts.silentworks.co.uk/slim-php-101-using-laravel-config-package/) about that topic.
  
 ## Helper method for Slim
 
