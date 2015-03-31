@@ -8,7 +8,7 @@ data). It is mainly created to be used with Slim Framework, but it can be used w
 
 ## Installation
 
-You can install it via composer by typing the following
+You can install it via composer by typing the following command in your terminal
 
 ```json
 composer require loshmis/simple-config
