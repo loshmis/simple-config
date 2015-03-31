@@ -109,8 +109,26 @@ config(['app.name' => 'Simple Config'])
 
 ## Usage without Slim PHP Framework
 ```php
+//path to your config directory
+define('CONFIG_PATH', __DIR__ . '/config'); 
 
+$loader = new \Loshmis\SimpleConfig\Loader (
+    CONFIG_PATH,
+    new Symfony\Component\Finder\Finder
+);
 
+$config = new \Loshmis\SimpleConfig\Config($loader);
+```
+
+After you instantiate Config class object, you can use it like this
+```php
+//get data
+$appName = $config->get('app.name');
+
+//set data
+$config->set('app.name', 'Simple Config')
+
+...
 ```
 
 ## License
