@@ -5,9 +5,13 @@ namespace Loshmis\SimpleConfig;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
 
-class Loader {
-
+class Loader
+{
+    /**
+     * @var
+     */
     private $configPath;
+
     /**
      * @var Finder
      */
@@ -23,10 +27,8 @@ class Loader {
     {
         $files = [];
 
-        foreach ($this->finder->files()->name('*.php')->in($this->configPath) as $file)
-        {
+        foreach ($this->finder->files()->name('*.php')->in($this->configPath) as $file) {
             $nesting = $this->getConfigurationNesting($file);
-
             $files[$nesting.basename($file->getRealPath(), '.php')] = $file->getRealPath();
         }
 
@@ -43,8 +45,7 @@ class Loader {
     {
         $directory = dirname($file->getRealPath());
 
-        if ($tree = trim(str_replace($this->configPath, '', $directory), DIRECTORY_SEPARATOR))
-        {
+        if ($tree = trim(str_replace($this->configPath, '', $directory), DIRECTORY_SEPARATOR)) {
             $tree = str_replace(DIRECTORY_SEPARATOR, '.', $tree).'.';
         }
 

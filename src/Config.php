@@ -4,8 +4,8 @@ namespace Loshmis\SimpleConfig;
 
 use Illuminate\Config\Repository;
 
-class Config extends Repository {
-
+class Config extends Repository
+{
     /**
      * Initialize the config repository and load files.
      *
