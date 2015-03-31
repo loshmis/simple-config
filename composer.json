@@ -1,6 +1,8 @@
 {
     "name": "loshmis/simple-config",
     "description": "Simple configuration loader",
+    "keywords": ["config", "simple configuration", "configuration", "slim"],
+    "license": "MIT",
     "authors": [
       {
         "name": "Milos Stojanovic",
